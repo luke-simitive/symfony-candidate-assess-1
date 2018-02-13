@@ -1,0 +1,36 @@
+{% extends "/base.html.twig" %}
+
+{% block content %}
+    <div class="blog-post">
+        {% for post in posts %}
+            <h3>{{ post.title }}</h3>
+
+            <p>
+                <small>{{ post.created.format("d/m/Y H:i") }} by {{ post.postedBy }}</small>
+            </p>
+            <p>
+                <blockquote>{{ post.body }}</blockquote>
+            </p>
+
+            <a href="" type="button" class="btn btn-default">View post</a>
+
+            <hr/>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="sidebar-module sidebar-module-inset">
+        <br>
+        <a href="{{ path('blog_create') }}" type="button" class="btn btn-default">Create a post</a>
+    </div>
+    <br>
+    <div class="sidebar-module">
+        <h4>Blog History</h4>
+        <ol class="list-unstyled">
+            <li>e.g. 03/01/18 - Blog Title</li>
+            <li>e.g. 02/01/18 - Blog Title</li>
+            <li>e.g. 01/01/18 - Blog Title</li>
+        </ol>
+    </div>
+{% endblock %}

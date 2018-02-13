@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% if post %}
+    {% block title %}
+        <h3>Displaying Blog Post: <mark>{{ post.title }}</mark></h3>
+    {% endblock %}
+
+    {% block content %}
+        <p>
+            <small>{{ post.created.format("d/m/Y H:i") }} by {{ post.postedBy }}</small>
+        </p>
+        <p>
+            <blockquote>{{ post.body }}</blockquote>
+        </p>
+    {% endblock %}
+
+    {% block sidebar %}
+        <br>
+        <a href="{{ path('blog_home') }}" type="button" class="btn btn-default">Back to posts</a>
+    {% endblock %}
+{% endif %}

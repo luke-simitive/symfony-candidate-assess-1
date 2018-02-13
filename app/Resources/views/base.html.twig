@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Simitive Blog</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('build/app-style.css') }}">
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}
+            <div class="container">
+                <div class="blog-header">
+                    <h1 class="blog-title">The Simitive Blog</h1>
+                    <p class="lead blog-description">Welcome to the Simitive Symfony Blog</p>
+                </div>
+
+                <hr/>
+
+                <div class="row">
+                    <div class="col-sm-8 blog-main">
+                        {% block title %}{% endblock %}
+                        {% block content %}{% endblock %}
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+                        {% block sidebar %}{% endblock %}
+                    </div>
+                </div>
+
+                <hr/>
+
+                <footer class="blog-footer">
+                    <p>
+                        <a href="#">Back to top</a>
+                    </p>
+                </footer>
+            </div>
+        {% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('build/app-js.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

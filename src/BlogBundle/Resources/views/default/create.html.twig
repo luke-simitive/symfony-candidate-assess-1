@@ -1,0 +1,13 @@
+{% extends "/base.html.twig" %}
+
+{% block title %}
+    <h3>Creating Blog Post</h3>
+{% endblock %}
+
+{% block content %}
+    {% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+{% endblock %}
