@@ -1,5 +1,9 @@
-blog_home:
+blog_index:
     path:     /
+    defaults: { _controller: BlogBundle:Post:index }
+
+blog_home:
+    path:     /blog
     defaults: { _controller: BlogBundle:Post:index }
 
 blog_create:

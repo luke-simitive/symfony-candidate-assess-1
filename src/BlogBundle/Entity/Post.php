@@ -32,7 +32,6 @@ class Post
      */
     private $created;
 
-
     /**
      * Get id
      *
@@ -147,4 +146,3 @@ class Post
         return $this->created;
     }
 }
-

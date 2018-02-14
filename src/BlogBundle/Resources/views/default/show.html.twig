@@ -15,7 +15,16 @@
     {% endblock %}
 
     {% block sidebar %}
-        <br>
-        <a href="{{ path('blog_home') }}" type="button" class="btn btn-default">Back to posts</a>
+        <div class="sidebar-module">
+            <br>
+            <a href="{{ path('blog_home') }}" type="button" class="btn btn-default">Back to posts</a>
+            <br><br>
+            <h4>Blog History</h4>
+            <ol class="list-unstyled">
+                <li>e.g. 03/01/18 - Blog Title</li>
+                <li>e.g. 02/01/18 - Blog Title</li>
+                <li>e.g. 01/01/18 - Blog Title</li>
+            </ol>
+        </div>
     {% endblock %}
 {% endif %}

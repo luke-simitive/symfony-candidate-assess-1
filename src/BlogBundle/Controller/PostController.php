@@ -27,7 +27,7 @@ class PostController extends Controller
         $post = new Post();
 
         $form = $this->createFormBuilder($post)
-            ->add('title', TextType::class)
+            ->add('title', TextType::class, array("required" => false))
             ->add('body', TextareaType::class)
             ->add('posted_by', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'Create Post'))
@@ -55,18 +55,6 @@ class PostController extends Controller
 
     public function showAction($postId)
     {
-        $post = $this->getDoctrine()
-            ->getRepository(Post::class)
-            ->find($postId);
-
-        if (!$postId) {
-            throw $this->createNotFoundException(
-                'No post found for id '.$postId
-            );
-        }
-
-        return $this->render('@Blog/default/show.html.twig', [
-            'post' => $post,
-        ]);
+        // TODO: send post data back to the show template
     }
 }
